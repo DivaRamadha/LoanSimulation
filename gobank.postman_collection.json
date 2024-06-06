@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "9557e007-e932-4f68-bcae-8393ffd6b107",
+		"name": "gobank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14081892"
+	},
+	"item": [
+		{
+			"name": "GetAccount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/account",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccountById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/account/1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"account",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Diva\",\n    \"lastName\": \"R\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/account",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAccount",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/account/2",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"account",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"divaramadha@gmail.com\",\n    \"password\": \"diva\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/login",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoanSimulation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"plafond\": 10000000,\n    \"duration\": 12, // in month\n    \"fees\": 5,\n    \"startDate\": \"2024-01-02\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/loan",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"loan"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "loanExample",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plafond\": 1000000,\n    \"duration\": 12, // in month\n    \"fees\": 5,\n    \"startDate\": \"2024-04-02\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/loan/simulation",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"loan",
+								"simulation"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Jun 2024 01:26:15 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1581"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Angsuran bunga\": 4167,\n        \"Angsuran pokok\": 81440,\n        \"Sisa angsuran pokok\": 918559,\n        \"Total angsuran\": 85607.48,\n        \"id\": 1,\n        \"tanggal\": \"2024-04-02\"\n    },\n    {\n        \"Angsuran bunga\": 3827,\n        \"Angsuran pokok\": 81780,\n        \"Sisa angsuran pokok\": 836779,\n        \"Total angsuran\": 85607.48,\n        \"id\": 2,\n        \"tanggal\": \"2024-05-02\"\n    },\n    {\n        \"Angsuran bunga\": 3487,\n        \"Angsuran pokok\": 82120,\n        \"Sisa angsuran pokok\": 754658,\n        \"Total angsuran\": 85607.48,\n        \"id\": 3,\n        \"tanggal\": \"2024-06-02\"\n    },\n    {\n        \"Angsuran bunga\": 3144,\n        \"Angsuran pokok\": 82463,\n        \"Sisa angsuran pokok\": 672195,\n        \"Total angsuran\": 85607.48,\n        \"id\": 4,\n        \"tanggal\": \"2024-07-02\"\n    },\n    {\n        \"Angsuran bunga\": 2801,\n        \"Angsuran pokok\": 82806,\n        \"Sisa angsuran pokok\": 589388,\n        \"Total angsuran\": 85607.48,\n        \"id\": 5,\n        \"tanggal\": \"2024-08-02\"\n    },\n    {\n        \"Angsuran bunga\": 2456,\n        \"Angsuran pokok\": 83151,\n        \"Sisa angsuran pokok\": 506237,\n        \"Total angsuran\": 85607.48,\n        \"id\": 6,\n        \"tanggal\": \"2024-09-02\"\n    },\n    {\n        \"Angsuran bunga\": 2109,\n        \"Angsuran pokok\": 83498,\n        \"Sisa angsuran pokok\": 422739,\n        \"Total angsuran\": 85607.48,\n        \"id\": 7,\n        \"tanggal\": \"2024-10-02\"\n    },\n    {\n        \"Angsuran bunga\": 1761,\n        \"Angsuran pokok\": 83846,\n        \"Sisa angsuran pokok\": 338892,\n        \"Total angsuran\": 85607.48,\n        \"id\": 8,\n        \"tanggal\": \"2024-11-02\"\n    },\n    {\n        \"Angsuran bunga\": 1412,\n        \"Angsuran pokok\": 84195,\n        \"Sisa angsuran pokok\": 254697,\n        \"Total angsuran\": 85607.48,\n        \"id\": 9,\n        \"tanggal\": \"2024-12-02\"\n    },\n    {\n        \"Angsuran bunga\": 1061,\n        \"Angsuran pokok\": 84546,\n        \"Sisa angsuran pokok\": 170151,\n        \"Total angsuran\": 85607.48,\n        \"id\": 10,\n        \"tanggal\": \"2025-01-02\"\n    },\n    {\n        \"Angsuran bunga\": 709,\n        \"Angsuran pokok\": 84898,\n        \"Sisa angsuran pokok\": 85252,\n        \"Total angsuran\": 85607.48,\n        \"id\": 11,\n        \"tanggal\": \"2025-02-02\"\n    },\n    {\n        \"Angsuran bunga\": 355,\n        \"Angsuran pokok\": 85252,\n        \"Sisa angsuran pokok\": 0,\n        \"Total angsuran\": 85607.48,\n        \"id\": 12,\n        \"tanggal\": \"2025-03-02\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "LoanApplication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-jwt-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoxLCJleHAiOjE3MTc3MjAxMjF9.38EkynVSp4lfbdmDQ4gzAhY6aZYPUGcI_w9CT6iJLOk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/loan",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"loan"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
